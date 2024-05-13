@@ -11,7 +11,7 @@ export default function SecondaryHeader() {
   }, [pathname]);
 
   return (
-    <div className="w-full border-b border-b-gray-300">
+    <div className="w-full border-b border-b-gray-300 bg-secondary">
       <div className="container px-4 mx-auto">
         <h3 className="font-semibold text-xl leading-8 text-[#1F2937]">
           {name}

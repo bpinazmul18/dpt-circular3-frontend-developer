@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         <SecondaryHeader />
-        <main className="flex min-h-screen flex-col items-center justify-between py-2">
+        <main className="flex min-h-screen flex-col items-center justify-between py-2 bg-secondary">
           {children}
         </main>
       </body>

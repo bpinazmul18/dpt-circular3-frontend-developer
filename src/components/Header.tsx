@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <div className="ezy__nav1 dark py-6 bg-[#1F2937] text-white relative">
+    <div className="ezy__nav1 dark py-6 bg-primary text-white relative">
       <nav>
         <div className="container px-4 mx-auto">
           <div className="flex justify-between items-center flex-row-reverse">

@@ -15,7 +15,7 @@ export default function NavMenu({ menus }: NavMenuType) {
         className="block lg:hidden cursor-pointer h-10 z-20"
         type="button"
         onClick={() => setOpenMobileMenu((prevState) => !prevState)}
-        ariaLabel="hamburger menu"
+        aria-label="hamburger menu"
       >
         <div className="h-0.5 w-7 bg-white -translate-y-2" />
         <div className="h-0.5 w-7 bg-white" />

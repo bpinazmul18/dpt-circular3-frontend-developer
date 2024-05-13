@@ -4,7 +4,7 @@ import http from "@/services/http";
 
 export const getFlights = async () => {
   try {
-    const response = await http.get(`${process.env.APP_HOST}/flightData.json`);
+    const response = await http.get(`/flight-offers`);
 
     if (response.status === 200) {
       return {

@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-axios.defaults.baseURL = process.env.APP_HOST;
+axios.defaults.baseURL = process.env.APP_BASE_API_URL;
 
 axios.interceptors.response.use(null, (error: AxiosError) => {
   const expectedError =

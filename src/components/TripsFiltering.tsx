@@ -2,23 +2,32 @@ import Input from "@/components/common/Input";
 import DateInput from "@/components/common/DateInput";
 import DaySelect from "@/components/common/DaySelect";
 import Button from "@/components/common/Button";
+import { getFlights } from "@/actions/getFlights";
+import { FlightResponse } from "@/Models/FlightResponse";
+import FlightList from "@/components/FlightList";
 
-export default function TripsFiltering() {
+export default async function TripsFiltering() {
+  const flightResponse: FlightResponse | undefined = await getFlights();
+
   return (
     <div className="container px-4 mx-auto">
       <div className="py-4 border-y border-slatBlue">
-        <div className="flex flex-wrap gap-3">
-          <Input type="text" placeholder="LHR" />
-          <Input type="text" placeholder="CDG" />
-          <DateInput />
-          <DaySelect options={[1, 2, 3, 4, 5, 5, 6, 7]} label="Day -" />
-          <DaySelect options={[1, 2, 3, 4, 5, 5, 6, 7]} label="Day +" />
-          <DaySelect options={[1, 2, 3, 4, 5, 5, 6, 7]} label="Any time" />
+        <div className="flex flex-wrap xl:justify-between gap-4">
+          <div className="flex flex-wrap gap-4">
+            <Input type="text" placeholder="LHR" />
+            <Input type="text" placeholder="CDG" />
+            <DateInput />
+          </div>
+
+          <div className="flex flex-wrap gap-4">
+            <DaySelect options={[]} label="Day -" />
+            <DaySelect options={[]} label="Day +" />
+            <DaySelect options={[]} label="Any time" />
+          </div>
 
           <div className="flex items-center gap-4">
             <div className="text-2xl font-medium">+</div>
-            <DaySelect options={[1, 2, 3, 4, 5, 5, 6, 7]} label="ADT" />
-            <DaySelect options={[1, 2, 3, 4, 5, 5, 6, 7]} label="1" />
+            <DaySelect options={[]} label="ADT" />
             <div className="text-2xl font-medium">+</div>
           </div>
         </div>
@@ -28,10 +37,8 @@ export default function TripsFiltering() {
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center">
             <input
-              checked
               id="checked-checkbox"
               type="checkbox"
-              value=""
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -48,7 +55,6 @@ export default function TripsFiltering() {
               <input
                 id="dummy"
                 type="radio"
-                value=""
                 name="environment"
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
@@ -81,8 +87,10 @@ export default function TripsFiltering() {
       </div>
 
       <div className="text-primary text-base leading-normal ">
-        Data Parsed successfully
+        {flightResponse?.data?.message}
       </div>
+
+      <FlightList listData={flightResponse?.data} />
     </div>
   );
 }

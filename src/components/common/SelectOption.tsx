@@ -3,19 +3,9 @@ type SelectOptionType = {
   selected?: boolean;
   disabled?: boolean;
 };
-export default function SelectOption({
-  option,
-  selected,
-  disabled,
-}: SelectOptionType) {
+export default function SelectOption({ option }: SelectOptionType) {
   return (
-    <option
-      className="px-3"
-      key={option}
-      value={option}
-      selected={selected}
-      disabled={disabled}
-    >
+    <option className="px-3" key={option} value={option}>
       {option}
     </option>
   );

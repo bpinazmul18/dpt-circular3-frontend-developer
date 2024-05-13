@@ -13,6 +13,7 @@ const config: Config = {
         blue: "#45428D",
         slatBlue: "#B4BAFB",
         secondary: "#FFFFFF",
+        brightGray: "#E5E7EB",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

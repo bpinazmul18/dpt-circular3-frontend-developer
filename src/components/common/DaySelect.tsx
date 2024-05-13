@@ -7,9 +7,11 @@ type DaySelectType = {
 };
 
 export default function DaySelect({ options, label }: DaySelectType) {
+  const _options = [label, ...options];
+
   return (
-    <Select defaultSelectedLabel={label}>
-      {options.map((option) => (
+    <Select value={options[0]?.toString()}>
+      {_options.map((option) => (
         <SelectOption key={option} option={option.toString()} />
       ))}
     </Select>

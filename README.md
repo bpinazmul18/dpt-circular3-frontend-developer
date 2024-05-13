@@ -2,9 +2,40 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repository:
 
 ```bash
+https://github.com/bpinazmul18/dpt-circular3-frontend-developer.git
+#or
+git@github.com:bpinazmul18/dpt-circular3-frontend-developer.git
+#or
+gh repo clone bpinazmul18/dpt-circular3-frontend-developer
+
+```
+
+Second, goto project directory:
+
+```bash
+cd dpt-circular3-frontend-developer
+
+```
+
+Third, create .env file from .env.example or use variable in .env file:
+
+```bash
+APP_BASE_API_URL=https://traveli-bd.vercel.app/api
+
+```
+
+Forth, install node packages and run the development server:
+
+```bash
+npm install
+#or
+yarn install
+#or
+pnpm i
+
 npm run dev
 # or
 yarn dev
